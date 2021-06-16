@@ -3,11 +3,12 @@ let face;
 let tear;
 let x = [];
 let y = [];
+let chara;
 
 function setup() {
   createCanvas(800, 800);
   strokeWeight(1);
-  frameRate(20);
+  frameRate(30);
   
   face = loadImage('eye.png');
 
@@ -20,7 +21,13 @@ function setup() {
     }
   pop();
 
-  
+    // chara_ani
+    chara = createSprite(400, 150, 50, 100);
+    let myAnimation = chara.addAnimation('floating', 'standing1.png', 'standing2.png', 'standing3.png');
+    myAnimation.offY = 18;
+    chara.addAnimation('moving', 'leftwalk.png');
+    chara.position.x = width/2;
+    chara.position.y = height/2;
 
   //Sometimes image sequences are not enough and you may want to
   //use p5's drawing function while retaining the built-in features of the
@@ -75,6 +82,49 @@ for(let i = 0; i < x. length; i++){
   //mouse trailer, the speed is inversely proportional to the mouse distance
   stretchy.velocity.x = (mouseX-stretchy.position.x)/5;
   stretchy.velocity.y = (mouseY-stretchy.position.y)/10;
+
+  drawSprites();
+
+  if (mouseX < chara.position.x - 10) {
+    chara.changeAnimation('moving');
+    //flip horizontally
+    chara.mirrorX(-1);
+    //negative x velocity: move left
+    chara.velocity.x = -2;
+  } else if (mouseX > chara.position.x + 10) {
+    chara.changeAnimation('moving');
+    //unflip
+    chara.mirrorX(1);
+    chara.velocity.x = 2;
+  } else {
+    //if close to the mouse, don't move
+    chara.changeAnimation('floating');
+    chara.velocity.x = 0;
+  }
+
+  if (mouseY < chara.position.y - 10) {
+    chara.changeAnimation('moving');
+    //flip horizontally
+    //negative x velocity: move left
+    chara.velocity.y = -2;
+  } else if (mouseY > chara.position.y + 10) {
+    chara.changeAnimation('moving');
+    //unflip
+    chara.velocity.y = 2;
+  } else {
+    //if close to the mouse, don't move
+    chara.changeAnimation('floating');
+    chara.velocity.y = 0;
+  }
+
+  if (chara.position.x < 200)
+    chara.position.x = 200;
+  if (chara.position.y < 600)
+    chara.position.y = 600;
+  if (chara.position.x > width-200)
+    chara.position.x = width-200;
+  if (chara.position.y > height-200)
+    chara.position.y = height-200;
 
   drawSprites();
 }

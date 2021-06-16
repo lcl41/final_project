@@ -32,6 +32,7 @@ function draw() {
   
   //fish_draw
   fill(153);
+  noStroke();
   arc(350, 300, 80, 80, 0, radians(270));
   strokeJoin(ROUND);
   rect(290, 290, 60, 60, 20);
@@ -105,8 +106,8 @@ function draw() {
 
   if (chara.position.x < 200)
     chara.position.x = 200;
-  if (chara.position.y < 400)
-    chara.position.y = 400;
+  if (chara.position.y < 450)
+    chara.position.y = 450;
   if (chara.position.x > width-200)
     chara.position.x = width-200;
   if (chara.position.y > height-200)

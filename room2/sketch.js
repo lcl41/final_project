@@ -21,6 +21,9 @@ function setup() {
     createCanvas(800, 800);
     rectMode(CENTER);
     background(200);
+
+
+    
 }
 //     createCanvas(800, 800, WEBGL);
 //     rectMode(CENTER);
