@@ -4,10 +4,6 @@ let y = 600;
 let w = 200;
 let h = 60;
 
-// function preload() {
-//   chara = loadImage('standing1.png');
-// }
-
 function setup() {
     createCanvas(1200, 800);
     strokeWeight(7);
