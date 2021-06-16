@@ -5,6 +5,11 @@ function setup() {
   rectMode(CENTER);
   strokeWeight(7);
 
+  background(0);
+  fill(153);
+
+
+
   // chara_ani
   chara = createSprite(400, 150, 50, 100);
   let myAnimation = chara.addAnimation('floating', 'standing1.png', 'standing2.png', 'standing3.png');
@@ -24,7 +29,7 @@ function draw() {
   fill(20, 50, 150);
   rect(405, 405, 440, 440);
 
-
+  
   //fish_draw
   fill(153);
   arc(350, 300, 80, 80, 0, radians(270));

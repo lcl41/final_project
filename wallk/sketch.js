@@ -1,4 +1,5 @@
 let chara;
+
 let x = 200;
 let y = 600;
 let w = 200;
@@ -17,6 +18,7 @@ function setup() {
 }
 
 function draw() {
+  
   background(200);
   fill(20, 20, 100);
   line(0, 600, 1200, 600);
@@ -31,29 +33,29 @@ function draw() {
 
 
   if (mouseX > x && mouseX < x + w && mouseY > y && mouseY < y+h){
-    fill(50); //오, 아래, 
+    fill(50);  
 } else {
     fill(150,50,50);
 }
 rect(x, y, w, h);
 
-push();
+
 if (mouseX > x && mouseX < x + w && mouseY > y && mouseY < y+h){
   fill(50);  
 } else {
   fill(50,100,150);
 }
 rect(x+300, y, w, h);
-pop();
 
-push();
+
+
 if (mouseX > x && mouseX < x + w && mouseY > y && mouseY < y+h){
   fill(50); 
 } else {
   fill(100);
 }
 rect(x+600, y, w, h);
-pop();
+
 
   // if (mouseX < chara.position.x - 10) {
   //   chara.changeAnimation('moving');
