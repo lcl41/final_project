@@ -9,8 +9,9 @@ function setup() {
     createCanvas(800, 800);
     fill(255, 140);
     noStroke();
-    frameRate(30);
-  
+    frameRate(40);
+ 
+
 
  // chara_ani
  chara = createSprite(400, 150, 50, 100);
@@ -29,6 +30,7 @@ function setup() {
 function draw() {
     background(0);
     fill(153);
+    
 
 for(let y = 0; y <= height; y += 40){
    for (let x = 0; x <= width; x += 40){
