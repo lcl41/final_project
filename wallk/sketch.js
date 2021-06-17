@@ -9,12 +9,12 @@ function setup() {
     createCanvas(1200, 800);
     strokeWeight(7);
 
-    // chara = createSprite(400, 150, 50, 100);
-    // let myAnimation = chara.addAnimation('floating', 'standing1.png', 'standing2.png', 'standing3.png');
-    // myAnimation.offY = 18;
-    // chara.addAnimation('moving', 'leftwalk.png');
-    // chara.position.x = width/2;
-    // chara.position.y = height/2;
+    chara = createSprite(400, 150, 50, 100);
+    let myAnimation = chara.addAnimation('floating', 'standing1.png', 'standing2.png', 'standing3.png');
+    myAnimation.offY = 18;
+    chara.addAnimation('moving', 'leftwalk.png');
+    chara.position.x = width/2;
+    chara.position.y = height/2;
 }
 
 function draw() {
@@ -57,46 +57,46 @@ if (mouseX > x && mouseX < x + w && mouseY > y && mouseY < y+h){
 rect(x+600, y, w, h);
 
 
-  // if (mouseX < chara.position.x - 10) {
-  //   chara.changeAnimation('moving');
-  //   //flip horizontally
-  //   chara.mirrorX(-1);
-  //   //negative x velocity: move left
-  //   chara.velocity.x = -2;
-  // } else if (mouseX > chara.position.x + 10) {
-  //   chara.changeAnimation('moving');
-  //   //unflip
-  //   chara.mirrorX(1);
-  //   chara.velocity.x = 2;
-  // } else {
-  //   //if close to the mouse, don't move
-  //   chara.changeAnimation('floating');
-  //   chara.velocity.x = 0;
-  // }
+  if (mouseX < chara.position.x - 10) {
+    chara.changeAnimation('moving');
+    //flip horizontally
+    chara.mirrorX(-1);
+    //negative x velocity: move left
+    chara.velocity.x = -2;
+  } else if (mouseX > chara.position.x + 10) {
+    chara.changeAnimation('moving');
+    //unflip
+    chara.mirrorX(1);
+    chara.velocity.x = 2;
+  } else {
+    //if close to the mouse, don't move
+    chara.changeAnimation('floating');
+    chara.velocity.x = 0;
+  }
 
-  // if (mouseY < chara.position.y - 10) {
-  //   chara.changeAnimation('moving');
-  //   //flip horizontally
-  //   //negative x velocity: move left
-  //   chara.velocity.y = -2;
-  // } else if (mouseY > chara.position.y + 10) {
-  //   chara.changeAnimation('moving');
-  //   //unflip
-  //   chara.velocity.y = 2;
-  // } else {
-  //   //if close to the mouse, don't move
-  //   chara.changeAnimation('floating');
-  //   chara.velocity.y = 0;
-  // }
+  if (mouseY < chara.position.y - 10) {
+    chara.changeAnimation('moving');
+    //flip horizontally
+    //negative x velocity: move left
+    chara.velocity.y = -2;
+  } else if (mouseY > chara.position.y + 10) {
+    chara.changeAnimation('moving');
+    //unflip
+    chara.velocity.y = 2;
+  } else {
+    //if close to the mouse, don't move
+    chara.changeAnimation('floating');
+    chara.velocity.y = 0;
+  }
 
-  // if (chara.position.x < 200)
-  //   chara.position.x = 200;
-  // if (chara.position.y < 400)
-  //   chara.position.y = 400;
-  // if (chara.position.x > width-200)
-  //   chara.position.x = width-200;
-  // if (chara.position.y > height-200)
-  //   chara.position.y = height-200;
+  if (chara.position.x < 200)
+    chara.position.x = 200;
+  if (chara.position.y < 400)
+    chara.position.y = 400;
+  if (chara.position.x > width-200)
+    chara.position.x = width-200;
+  if (chara.position.y > height-200)
+    chara.position.y = height-200;
 
-  // drawSprites();
+  drawSprites();
 }
