@@ -1,14 +1,15 @@
 let chara;
-
 //Moving sprites
 var ghost;
-var direction = 90; //circle initial direction moving down
+var direction = 90;
 
 
 function setup() {
     createCanvas(800, 800);
     fill(255, 140);
-    noStroke();
+    rectMode(CENTER);
+    // noStroke();
+    stroke(7);
     frameRate(40);
  
     // fill(0);
@@ -24,9 +25,9 @@ function setup() {
  chara.position.x = width/2;
  chara.position.y = height/2;
 
-   //create the sprites
-   ghost = createSprite(600, 200, 50, 100);
-   ghost.addAnimation('floating', 'blue1.png', 'blue2.png', 'blue3.png');
+//create the sprites
+ghost = createSprite(600, 200, 50, 100);
+ghost.addAnimation('floating', 'blue1.png', 'blue2.png', 'blue3.png');
 
 }
 
@@ -34,6 +35,7 @@ function draw() {
     background(0);
     fill(153);
 
+    
 
 
 for(let y = 0; y <= height; y += 40){
@@ -43,17 +45,24 @@ for(let y = 0; y <= height; y += 40){
    } 
 }
 
-push();
-  //or by applying a force toward a point
-  //force (acceleration), pointx, pointy
-  ghost.attractionPoint(0.2, mouseX, mouseY);
-  //since the force keeps incrementing the speed you can
-  //set a limit to it with maxSpeed
-  ghost.maxSpeed = 7;
 
-  //draw the sprite
-  drawSprites();
+fill(20, 20, 100);
+line(0, 0, width, height);
+line(0, 800, 800, 0);
+fill(0);
+// noFill();
+rect(400, 400, 500, 500, 10, 10);
+// fill(20, 50, 150);
+rect(405, 405, 440, 440);
+
+
+push();
+  ghost.attractionPoint(0.2, mouseX, mouseY);
+  ghost.maxSpeed = 7;
 pop();
+
+  drawSprites();
+
 
 
 if (mouseX < chara.position.x - 10) {
@@ -90,8 +99,8 @@ if (mouseX < chara.position.x - 10) {
 
   if (chara.position.x < 200)
     chara.position.x = 200;
-  if (chara.position.y < 400)
-    chara.position.y = 400;
+  if (chara.position.y < 500)
+    chara.position.y = 500;
   if (chara.position.x > width-200)
     chara.position.x = width-200;
   if (chara.position.y > height-200)

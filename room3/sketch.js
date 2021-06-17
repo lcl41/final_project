@@ -34,25 +34,17 @@ function setup() {
   //sprite class
   stretchy = createSprite(400, 200, 10, 10);
 
-  //To do so you can override (overwrite) the draw() function of the sprite
-  //and make it display anything you want in its current position.
-  //In javascript function and methods can be assigned like variables
+
 
   stretchy.draw = function() {
-
-    //the center of the sprite will be point 0,0
-    //"this" in this function will reference the sprite itself
     fill(0);
-    // 237, 205
-    //make the ellipse stretch in the sprite direction
-    //proportionally to its speed
+
     push();
     rotate(radians(this.getDirection()));
     ellipse(5, 5, 100+this.getSpeed(), 100-this.getSpeed());
     pop();
 
-    //this.deltaX and this.deltaY are the position increment
-    //since the last frame, move the face image toward the direction
+   
     image(face, this.deltaX*2, this.deltaY*2);
   };
 
