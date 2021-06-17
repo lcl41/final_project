@@ -11,6 +11,9 @@ function setup() {
     noStroke();
     frameRate(40);
  
+    // fill(0);
+    // textAlign(CENTER);
+    // text('holidayblues', width/2, height-20);
 
 
  // chara_ani
@@ -30,7 +33,8 @@ function setup() {
 function draw() {
     background(0);
     fill(153);
-    
+
+
 
 for(let y = 0; y <= height; y += 40){
    for (let x = 0; x <= width; x += 40){

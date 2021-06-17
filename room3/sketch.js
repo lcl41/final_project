@@ -65,6 +65,10 @@ function draw() {
   line(450, 0, 450, 800);
   triangle(900, 800, 450, 600, 20, 800,10);
 
+  fill(0);
+  textAlign(CENTER);
+  text('so sad', width/2, height-20);
+
 //   if(mouseIsPressed){
 //     fill(100, 100, 250);
 // }
